@@ -3723,7 +3723,7 @@ input, select, textarea {
 					}
 
 				#nav ul.links li.active {
-					background-color: #8399cb;
+					background-color: transparent;
 				}
 
 					#nav ul.links li.active a {
@@ -4041,7 +4041,7 @@ input, select, textarea {
 				}
 
 		#footer label {
-			color: #717981;
+			color: #817771;
 		}
 
 		#footer input[type="text"],
