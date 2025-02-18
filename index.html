@@ -13,6 +13,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 	</head>
+	
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -66,6 +67,29 @@
 									<li><a href="welcome-to-nextclick.html" class="button large">View Details</a></li>
 								</ul>
 							</article>
+
+						
+							<!-- Search Bar -->
+							<div id="search-container">
+								<p id="search-text"><b>Search for skills and discover expertise instantly!</b></p>
+								<input type="text" id="search-bar" placeholder="Search Skills...">
+								<ul id="skill-list">
+									<li><a href="brandcraft-designs.html">BrandCraft Designs</a></li>
+									<li><a href="content-creation.html">Content Creation</a></li>
+									<li><a href="data-visionary.html">Data Visionary</a></li>
+									<li><a href="daraz-seller-success.html">Daraz Seller Success</a></li>
+									<li><a href="digital-aesthetic.html">Digital Aesthetics</a></li>
+									<li><a href="excel-data-management.html">Excel Data Management</a></li>
+									<li><a href="lead-generation.html">Lead Generation</a></li>
+									<li><a href="marketplace-maximizer.html">Marketplace Maximizer</a></li>
+									<li><a href="online-store-mastery.html">Online Store Mastery</a></li>
+									<li><a href="shopify-solutions.html">Shopify Solutions</a></li>
+									<li><a href="social-sphere-expert.html">Social Media Expert</a></li>
+									<li><a href="sql-data-purifier.html">SQL Data Purifier</a></li>
+									<li><a href="tiktok-commerce-pro.html">TikTok Commerce Pro</a></li>
+									<li><a href="visual-storyteller.html">Video Creation</a></li>
+								</ul>
+							</div>
 
 						<!-- Posts -->
 							<section class="posts">
@@ -233,7 +257,7 @@
 										<h2><a href="brandcraft-designs.html">BrandCraft Designs<br />
 										</a></h2>
 									</header>
-									<a href="brandcraft-designs.html" class="image fit"><img src="images/visualstoryteller.png" alt="" /></a>
+									<a href="brandcraft-designs.html" class="image fit"><img src="images/brandcraftdesigns.png" alt="" /></a>
 									<p>Logos, Brochures & Banners That Speak for Your Brand!</p>
 									<ul class="actions special">
 										<li><a href="brandcraft-designs.html" class="button">View Details</a></li>
@@ -264,5 +288,36 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				document.getElementById('search-bar').addEventListener('keyup', function() {
+					let filter = this.value.toLowerCase();
+					let skills = document.querySelectorAll('#skill-list li');
+					let skillList = document.getElementById('skill-list');
+					let found = false;
+			
+					skills.forEach(function(skill) {
+						let text = skill.textContent.toLowerCase();
+						if (text.includes(filter)) {
+							skill.style.display = 'block';
+							found = true;
+						} else {
+							skill.style.display = 'none';
+						}
+					});
+			
+					// Show the list if there's a match, otherwise hide it
+					skillList.style.display = found ? 'block' : 'none';
+				});
+			
+				// Hide the skill list when clicking outside
+				document.addEventListener('click', function(event) {
+					let searchContainer = document.getElementById('search-container');
+					if (!searchContainer.contains(event.target)) {
+						document.getElementById('skill-list').style.display = 'none';
+					}
+				});
+			</script>
+			
 	</body>
+	
 </html>
